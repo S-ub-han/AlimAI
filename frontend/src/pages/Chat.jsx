@@ -27,7 +27,7 @@ const Chat = () => {
     setMessages(prev => [...prev, userMessage]);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/chat/ask', { question: input });
+      const res = await axios.post('https://alimai.onrender.com/api/chat/ask', { question: input });
 
       const botMessage = { sender: 'bot', text: res.data.message };
       setMessages(prev => [...prev, botMessage]);
