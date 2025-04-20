@@ -1,0 +1,97 @@
+.chat-container {
+  background-color: #0d0d0d;
+  background-image: url('../assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Added for positioning the footer */
+}
+
+.chat-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.chat-title {
+  font-size: 2rem;
+  font-family: 'Scheherazade New', serif;
+  color: #f5c542;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px #f5c542;
+}
+
+.chat-box {
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(15, 15, 15, 0.95);
+  border: 1px solid #444;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+}
+
+.chat-messages {
+  max-height: 350px;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+  color: #ddd;
+}
+
+.chat-message {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.chat-message.user {
+  color: #eee;
+}
+
+.chat-message.bot {
+  color: #c0c0c0;
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 1rem;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #222;
+  color: #fff;
+}
+
+.chat-button {
+  background: linear-gradient(to right, #aaa, #fff);
+  color: #000;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chat-button:hover {
+  background: linear-gradient(to right, #bbb, #fff);
+}
+
+/* Footer styling */
+.footer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: white;
+  opacity: 0.7;
+}

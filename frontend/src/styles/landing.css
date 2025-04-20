@@ -1,0 +1,50 @@
+.landing-container {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+.landing-title {
+  font-size: 3rem;
+  color: white;
+  margin-top: 20px;
+}
+
+.landing-subtitle {
+  font-size: 1.2rem;
+  color: white;
+  margin: 10px 0;
+}
+
+.enter-button {
+  background: #f1c40f; /* Silver gradient */
+  color: #2c3e50;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: white;
+  opacity: 0.7;
+}
