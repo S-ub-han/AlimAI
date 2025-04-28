@@ -1,21 +1,18 @@
-const { getResponse } = require('../services/geminiService');
+const { getGeminiAnswer } = require('../services/geminiService');
 
-exports.askQuestion = async (req, res) => {
+const askQuestion = async (req, res) => {
   const { question } = req.body;
 
   try {
-    // Get the response from all APIs (Quran, Hadith, Gemini)
-    const { text, source, reference } = await getResponse(question);
-
-    // Sending the final response with text, source, and reference
+    const answer = await getGeminiAnswer(question);
     res.json({
-      message: text,
-      source: source,
-      reference: reference || 'No reference available'
+      answer,
+      source: 'Gemini AI (Islamic Assistant)'
     });
-  } catch (err) {
-    console.error('Error in controller:', err.message);
-    res.status(500).json({ message: 'Error fetching response' });
+  } catch (error) {
+    console.error('Error in askQuestion:', error.message);
+    res.status(500).json({ error: 'Failed to get response' });
   }
 };
 
+module.exports = { askQuestion };

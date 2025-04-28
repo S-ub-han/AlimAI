@@ -24,21 +24,24 @@ const Chat = () => {
   };
 
   const handleSend = async () => {
-    if (!input.trim()) return;
+  if (!input.trim()) return;
 
-    const userMessage = { sender: 'user', text: input };
-    setMessages(prev => [...prev, userMessage]);
+  const userMessage = { sender: 'user', text: input };
+  setMessages(prev => [...prev, userMessage]);
 
-    try {
-      const res = await axios.post('https://alimai.onrender.com/api/chat/ask', { question: input });
-      const botMessage = { sender: 'bot', text: res.data.message };
-      setMessages(prev => [...prev, botMessage]);
-    } catch (err) {
-      setMessages(prev => [...prev, { sender: 'bot', text: 'Error fetching response.' }]);
-    }
+  try {
+    const res = await axios.post('http://localhost:5000/api/chat/ask', { question: input });
+    const botMessage = { sender: 'bot', text: res.data.answer }; // <-- YAHAN .answer
+    setMessages(prev => [...prev, botMessage]);
+  } catch (err) {
+    setMessages(prev => [...prev, { sender: 'bot', text: 'Error fetching response.' }]);
+  }
 
-    setInput('');
-  };
+  setInput('');
+};
+
+   
+  
 
   return (
     <div className="chat-container">
