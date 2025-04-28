@@ -3,79 +3,84 @@
   background-image: url('../assets/background.jpg');
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
-  padding: 2rem;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative; /* Added for positioning the footer */
+  position: relative;
 }
 
-.chat-logo {
-  width: 120px;
-  height: auto;
-  margin-bottom: 1rem;
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.chat-logo-header {
+  width: 50px;
+  margin-right: 10px;
 }
 
 .chat-title {
   font-size: 2rem;
   font-family: 'Scheherazade New', serif;
   color: #f5c542;
-  margin-bottom: 1.5rem;
   text-shadow: 0 0 10px #f5c542;
 }
 
-.chat-box {
-  width: 100%;
-  max-width: 800px;
-  background-color: rgba(15, 15, 15, 0.95);
-  border: 1px solid #444;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-  padding: 2rem;
-  backdrop-filter: blur(8px);
-}
-
 .chat-messages {
-  max-height: 350px;
+  flex: 1;
   overflow-y: auto;
-  margin-bottom: 1.5rem;
-  color: #ddd;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.chat-message {
+.message {
+  max-width: 70%;
+  padding: 0.75rem 1rem;
   margin-bottom: 1rem;
-  line-height: 1.5;
+  border-radius: 16px;
+  font-size: 1rem;
+  word-wrap: break-word;
 }
 
-.chat-message.user {
+.message.user {
+  align-self: flex-end;
+  background-color: #128C7E;
+  color: white;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: #333;
   color: #eee;
-}
-
-.chat-message.bot {
-  color: #c0c0c0;
 }
 
 .chat-input-area {
   display: flex;
-  gap: 1rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .chat-input {
   flex: 1;
   padding: 0.75rem 1rem;
-  border-radius: 8px;
+  border-radius: 20px;
   border: none;
   background-color: #222;
   color: #fff;
+  font-size: 1rem;
+  outline: none;
+  margin-right: 10px;
 }
 
 .chat-button {
   background: linear-gradient(to right, #aaa, #fff);
   color: #000;
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.75rem 1.2rem;
+  border-radius: 20px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -87,11 +92,19 @@
 
 /* Footer styling */
 .footer {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  text-align: center;
+  padding: 0.5rem;
   font-size: 0.8rem;
   color: white;
   opacity: 0.7;
+}
+
+/* Scrollbar Design */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 3px;
 }
