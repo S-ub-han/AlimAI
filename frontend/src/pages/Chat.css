@@ -127,7 +127,7 @@
 /* Mobile View Adjustments */
 @media only screen and (max-width: 768px) {
   .chat-container {
-    padding-bottom: 80px; /* Extra space for footer */
+    padding-bottom: 0; /* Remove extra space for footer */
   }
 
   .chat-header {
@@ -140,8 +140,12 @@
   }
 
   .chat-title {
-    font-size: 1.8rem;
+    font-size: 1rem;
     text-align: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: -10px;
   }
 
   .chat-messages {
@@ -156,6 +160,7 @@
   .chat-input-area {
     padding: 0.5rem;
     background: rgba(0, 0, 0, 0.9);
+    margin-bottom: 0; /* Remove any margin here */
   }
 
   .chat-input {
@@ -169,10 +174,7 @@
 
   .footer {
     font-size: 0.9rem;
-  }
-
-  .footer-disclaimer {
-    font-size: 0.75rem;
+    margin-top: 0; /* Ensure footer margin is zero to avoid unnecessary space */
   }
 }
 
