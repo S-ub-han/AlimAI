@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Chat.css';
-import logo from '../assets/logo.png';
 import axios from 'axios';
 
 const Chat = () => {
@@ -44,7 +43,7 @@ const Chat = () => {
   return (
     <div className="chat-container">
       <div className="chat-header">
-        <img src={logo} alt="Logo" className="chat-logo-header" />
+        {/* Logo removed */}
         <h1 className="chat-title">﷽</h1>
       </div>
 
@@ -69,8 +68,10 @@ const Chat = () => {
         <button onClick={handleSend} className="chat-button">Ask</button>
       </div>
 
-      <div className="footer">
-        Developed by Subhan Khan
+      
+
+      <div className="footer-disclaimer">
+      AalimAI assists with Islamic queries; for fatwa-related questions, kindly consult a qualified Mufti.
       </div>
     </div>
   );
